@@ -1,5 +1,6 @@
 package services;
 
+import exceptions.PostNoEncontradoException;
 import models.Post;
 import providers.PostProvider;
 import providers.UserProvider;
@@ -13,6 +14,10 @@ public class PostService {
     }
 
     public Post obtenerPostPorId(int idPost) {
-        return postProvider.obtenerPostPorId(idPost);
+        if (postProvider.obtenerPostPorId(idPost) == null) {
+            throw new PostNoEncontradoException();
+        } else {
+            return postProvider.obtenerPostPorId(idPost);
+        }
     }
 }
