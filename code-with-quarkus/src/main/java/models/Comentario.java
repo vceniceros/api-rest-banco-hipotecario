@@ -13,4 +13,8 @@ public class Comentario {
             this.email = email;
             this.cuerpo = cuerpo;
     }
+
+    public boolean perteneceAUnPost(Post post) {
+        return post.comparteIdCon(idPost);
+    }
 }
