@@ -1,6 +1,6 @@
 # api rest para banco hipotecario
 
-esta es una prueba tecnica para el banco hipotecari, se debe desarrollar una API Rest que pueda consumir recursos de una api externa: [text](<../../../Descargas/Prueba Técnica - Desarrollador Java Jr.docx>)
+esta es una prueba tecnica para el banco hipotecario, se debe desarrollar una API Rest que pueda consumir recursos de una api externa: [text](<../../../Descargas/Prueba Técnica - Desarrollador Java Jr.docx>)
 
 ## requisitos tecnicos
 
@@ -18,7 +18,7 @@ este debe poder eliminar un post por id y retornar una respuesta esperada
 
 esto es intrinseco
 
-4. loggin basico (usuario y password basicas)
+
 
 ## entidades
 
@@ -32,6 +32,41 @@ compañia: nombre, frase y bs
 
 comentario: idPost, id, nombre, email, cuerpo
 
+
+## principios
+
+para resolver este problema se uso el paradigma orientado a objetos y como principio primordial el TDD, test-driven-development, se procuro hacer un test previo a cada funcionalidad implementada, asi hasta llegar a una comodidad suficiente para priorizar los test escenciales
+
+## como compilar el proyecto
+
+primero  se debe mediante terminal pararse en el directorio del proyecto
+
+```shell
+cd /directorio donde se guarde el proyecto/api-rest-banco-hipotecario/code-with-quarkus
+```
+
+una vez ejecutar el comando
+
+```shell
+mvnw.cmd       
+```
+
+esto buildea el proyecto para poder ejecutarlo, si se tiene quarkus instalado se puede ejecutar el comando 
+
+
+```shell
+quarkus dev     
+```
+
+para ejecutarlo en modo dev y poder compilar los test al escribir la r con el servidor local ya ejecutado
+
+## testar endpoints
+
+con el proyecto ya buildeado y ejecutandose ingresar en cualquier navegador al link: [http://localhost:8080/q/swagger-ui/](https://localhost:8080/q/swagger-ui/)
+
+para mediante swagger poder ver los endPoints y testear su funcionalidad
+
+##
 
 
 
