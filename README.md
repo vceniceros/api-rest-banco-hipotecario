@@ -1,6 +1,7 @@
 # api rest para banco hipotecario
 
-esta es una prueba tecnica para el banco hipotecario, se debe desarrollar una API Rest que pueda consumir recursos de una api externa: (https://jsonplaceholder.typicode.com)[https://jsonplaceholder.typicode.com]
+esta es una prueba tecnica para el banco hipotecario, se debe desarrollar una API Rest que pueda consumir recursos de una api externa:
+[https://jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com)
 
 ## requisitos tecnicos
 
