@@ -66,7 +66,11 @@ con el proyecto ya buildeado y ejecutandose ingresar en cualquier navegador al l
 
 para mediante swagger poder ver los endPoints y testear su funcionalidad
 
-##
+## arquitectura y decisiones tecnicas
+
+se busco que la misma sea los mas escalable posible, se separaron los services, de los providers para garantizar la independencia de los endpoints de la fuente de la informacion, como el servico no conoce a la pagina jsonplaceholder sino a su provider esto le permite poder intercambiar entre providers segun se desee pudiendo asi que si mañana fuese requerido obtener la informacion de los json por otras fuentes esto sea posible de realizar con cambios minimos a la implementacion.
+
+
 
 
 
