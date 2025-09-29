@@ -1,10 +1,11 @@
 package services;
 
 import exceptions.UsuarioNoEncontradoException;
+import jakarta.enterprise.context.ApplicationScoped;
 import models.Usuario;
 import providers.UserProvider;
 
-
+@ApplicationScoped
 public class UserService {
     private UserProvider userProvider;
 

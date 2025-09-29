@@ -1,5 +1,7 @@
 package models;
 
+import dto.GeoDTO;
+
 public class Geo {
     private double latitud;
     private double longitud;
@@ -14,5 +16,12 @@ public class Geo {
 
     public Double getLogitud() {
         return this.longitud;
+    }
+
+    public GeoDTO generarDTO() {
+        GeoDTO dto = new GeoDTO();
+        dto.setLat(String.valueOf(this.latitud));
+        dto.setLng(String.valueOf(this.longitud));
+        return dto;
     }
 }

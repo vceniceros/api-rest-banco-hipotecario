@@ -1,5 +1,7 @@
 package models;
 
+import dto.DireccionDTO;
+
 public class Direccion {
     private String calle;
     private String suite;
@@ -21,5 +23,19 @@ public class Direccion {
 
     public Double obtenerLogitud() {
         return this.geo.getLogitud(); //mismo aca
+    }
+
+    public Boolean sonLaMismaDireccion(Direccion direccion) {
+        return direccion.geo.getLatitud().equals(this.geo.getLatitud()) && this.geo.getLogitud().equals(direccion.geo.getLogitud());// esto anida condicionales y rompe encapsulamiento
+    }
+
+    public DireccionDTO generarDTO() {
+        DireccionDTO dto = new DireccionDTO();
+        dto.setStreet(this.calle);
+        dto.setCity(this.ciudad);
+        dto.setSuite(this.suite);
+        dto.setGeo(this.geo.generarDTO());
+        dto.setZipcode(this.codPostal);
+        return dto;
     }
 }

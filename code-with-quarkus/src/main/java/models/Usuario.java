@@ -1,5 +1,7 @@
 package models;
 
+import dto.UsuarioDTO;
+
 public class Usuario {
     private int id;
     private String nombre;
@@ -9,6 +11,9 @@ public class Usuario {
     private String telefono;
     private String website;
     private Compañia compañia;
+
+    public Usuario() {
+    }
 
 
     public Usuario(int id, String nombre, String username, String email, Direccion direccion, String telefono, String website, Compañia compañia) {
@@ -36,5 +41,21 @@ public class Usuario {
 
     public boolean esElMismoUsuario(Usuario usuario) {
         return this.id == usuario.id;
+    }
+
+    public boolean viveEn(Direccion direccion) {return  this.direccion.sonLaMismaDireccion( direccion);}
+
+
+    public UsuarioDTO generararDto() {
+        UsuarioDTO dto = new UsuarioDTO();
+        dto.setId(this.id);
+        dto.setUsername(this.username);
+        dto.setName(this.nombre);
+        dto.setEmail(this.email);
+        dto.setAddress(this.direccion.generarDTO());
+        dto.setPhone(this.telefono);
+        dto.setWebsite(this.website);
+        dto.setCompany(this.compañia.generarDTO());
+        return dto;
     }
 }
