@@ -12,4 +12,12 @@ public class Post {
             this.titulo = titulo;
             this.cuerpo = cuerpo;
     }
+
+    public boolean comparteIdCon(int idPost) {
+        return this.idPost == idPost;
+    }
+
+    public boolean fuePublicadoPor(Usuario usuario) {
+        return  usuario.comparteIdCon(idUsuario);
+    }
 }
