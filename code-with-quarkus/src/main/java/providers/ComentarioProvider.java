@@ -2,6 +2,8 @@ package providers;
 
 import models.Comentario;
 
+import java.util.List;
+
 public interface ComentarioProvider {
-    Comentario obtenerComentarioPorId(int idComentario);
+    List<Comentario> obtenerComentariosDePost(int postId);
 }

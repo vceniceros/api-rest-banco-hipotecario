@@ -1,5 +1,7 @@
 package models;
 
+import dto.CompañiaDTO;
+
 public class Compañia {
 
     private String nombre;
@@ -10,5 +12,13 @@ public class Compañia {
         this.nombre = nombre;
         this.catchFrase = catchFrase;
         this.bussinesStrategy = bussinesStrategy;
+    }
+
+    public CompañiaDTO generarDTO() {
+        CompañiaDTO compañiaDTO = new CompañiaDTO();
+        compañiaDTO.setName(this.nombre);
+        compañiaDTO.setBs(this.bussinesStrategy);
+        compañiaDTO.setCatchPhrase(this.catchFrase);
+        return compañiaDTO;
     }
 }

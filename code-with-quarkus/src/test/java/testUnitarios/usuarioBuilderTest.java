@@ -24,23 +24,23 @@ public class usuarioBuilderTest {
     public void setUp() {
          json = "{\n" +
                 "  \"id\": 1,\n" +
-                "  \"nombre\": \"Leanne Graham\",\n" +
-                "  \"usuario\": \"Bret\",\n" +
+                "  \"name\": \"Leanne Graham\",\n" +
+                "  \"username\": \"Bret\",\n" +
                 "  \"email\": \"Sincere@april.biz\",\n" +
-                "  \"direccion\": {\n" +
-                "    \"calle\": \"Kulas Light\",\n" +
+                "  \"address\": {\n" +
+                "    \"street\": \"Kulas Light\",\n" +
                 "    \"suite\": \"Apt. 556\",\n" +
-                "    \"ciudad\": \"Gwenborough\",\n" +
-                "    \"codPostal\": \"92998-3874\",\n" +
+                "    \"city\": \"Gwenborough\",\n" +
+                "    \"zipcode\": \"92998-3874\",\n" +
                 "    \"geo\": {\n" +
                 "      \"lat\": \"-37.3159\",\n" +
-                "      \"lon\": \"81.1496\"\n" +
+                "      \"lng\": \"81.1496\"\n" +
                 "    }\n" +
                 "  },\n" +
-                "  \"telefono\": \"1-770-736-8031 x56442\",\n" +
+                "  \"phone\": \"1-770-736-8031 x56442\",\n" +
                 "  \"website\": \"hildegard.org\",\n" +
-                "  \"compañia\": {\n" +
-                "    \"nombre\": \"Romaguera-Crona\",\n" +
+                "  \"company\": {\n" +
+                "    \"name\": \"Romaguera-Crona\",\n" +
                 "    \"catchPhrase\": \"Multi-layered client-server neural-net\",\n" +
                 "    \"bs\": \"harness real-time e-markets\"\n" +
                 "  }\n" +

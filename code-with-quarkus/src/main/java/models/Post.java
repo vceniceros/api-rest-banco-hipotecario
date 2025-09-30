@@ -20,4 +20,20 @@ public class Post {
     public boolean fuePublicadoPor(Usuario usuario) {
         return  usuario.comparteIdCon(idUsuario);
     }
+
+    public int getId() {
+        return idPost;
+    }
+
+    public String getTitle() {
+        return titulo;
+    }
+
+    public String getBody() {
+        return cuerpo;
+    }
+
+    public int getUserId() {
+        return idUsuario;
+    }
 }

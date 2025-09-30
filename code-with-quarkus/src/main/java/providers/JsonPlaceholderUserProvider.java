@@ -4,9 +4,8 @@ import builders.UsuarioBuilder;
 import dto.UsuarioDTO;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import models.Usuario;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-
+import models.Usuario;
 
 @ApplicationScoped
 public class JsonPlaceholderUserProvider implements UserProvider {
@@ -17,7 +16,7 @@ public class JsonPlaceholderUserProvider implements UserProvider {
 
     @Override
     public Usuario obtenerUsuarioPorId(int idUsuario) {
-        UsuarioDTO dto = client.obtenerUsuarioPorId(idUsuario);
-        return dto == null ? null : UsuarioBuilder.construirUsuario(dto);
+        UsuarioDTO dto = client.getUsuario(idUsuario);
+        return UsuarioBuilder.construirUsuario(dto);
     }
 }

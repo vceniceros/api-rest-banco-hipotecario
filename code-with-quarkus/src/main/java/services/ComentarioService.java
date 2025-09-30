@@ -1,9 +1,13 @@
 package services;
 
-import exceptions.ComentarioNoEncontradoException;
+import exceptions.PostSinComentariosException;
+import jakarta.enterprise.context.ApplicationScoped;
 import models.Comentario;
 import providers.ComentarioProvider;
 
+import java.util.List;
+
+@ApplicationScoped
 public class ComentarioService {
     private ComentarioProvider comentarioProvider;
 
@@ -11,11 +15,11 @@ public class ComentarioService {
         this.comentarioProvider = comentarioProvider;
     }
 
-    public Comentario obtenerComentarioPorId(int idComentario) {
-        Comentario comentario = comentarioProvider.obtenerComentarioPorId(idComentario);
-        if (comentario == null) {
-            throw new ComentarioNoEncontradoException();
+    public List<Comentario> obtenerComentariosDePostPorId(int idPost) {
+        List<Comentario> comentarios = comentarioProvider.obtenerComentariosDePost(idPost);
+        if (comentarios.isEmpty()) {
+            throw new PostSinComentariosException();
         }
-        return comentario;
+        return comentarios;
     }
 }

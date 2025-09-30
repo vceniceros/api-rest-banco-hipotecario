@@ -13,18 +13,34 @@ import providers.UserProvider;
 import services.PostService;
 import services.UserService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class postServiceTest{
     PostProvider postProvider;
     Post postPrueba;
+    Post postPrueba1;
+    Post postPrueba2;
+    Post postPrueba3;
 
-
+    List<Post> listaDePrueba;
 
     @BeforeEach
     public void setUp(){
        postProvider = Mockito.mock(PostProvider.class);
         postPrueba = new Post(1,1,"post de prueba", "loren ipsum");
+        postPrueba1 = new Post(1,0,"post de prueba", "loren ipsum");
+        postPrueba2 = new Post(1,1,"post de prueba", "loren ipsum");
+        postPrueba3 = new Post(1,2,"post de prueba", "loren ipsum");
+        listaDePrueba = new ArrayList<>();
+
+        listaDePrueba.add(postPrueba1);
+        listaDePrueba.add(postPrueba2);
+        listaDePrueba.add(postPrueba3);
+
         Mockito.when(postProvider.obtenerPostPorId(1)).thenReturn(postPrueba);
         Mockito.when(postProvider.obtenerPostPorId(999)).thenReturn(null);
+        Mockito.when(postProvider.obtenerTodosLosPost()).thenReturn(listaDePrueba);
     }
 
     @Test
@@ -42,5 +58,14 @@ public class postServiceTest{
                 PostNoEncontradoException.class,
                 () -> postService.obtenerPostPorId(999)
         );
+    }
+
+    @Test
+    public void test03SeBuscanTodosLosPost(){
+        PostService postService = new PostService(postProvider);
+
+        List<Post> posts = postService.obtenerTodosLosPost();
+
+        Assertions.assertEquals(listaDePrueba, posts);
     }
 }
